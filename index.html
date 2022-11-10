@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECIBO FAST</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" type="image/x-icon" href="./assets/logo-pagina-recibo-fast.svg">
+</head>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center; align-content: center; background-color: #e3e3e3;" onload="executarNoCarregamento()">
+    <noscript>Seu navegador não tem suporte ou encontrasse com javascript desabilitado</noscript>
+    <header style="width: 100%; z-index: 1;" >
+        <nav style="width: 100%;height: 6vh;display: flex;align-content: center;align-items: center;justify-content: space-around;box-shadow: 0px 2px 8px #b1b1b1;">
+            <img src="./assets/recibo-fast-logo.svg" id="logo-site" alt="Logo Relatorio Fast" >
+            <ul class="ul-nav-menu">
+                <li><a href="https://adrielrosa2001.github.io/relatorios-caixas-webpage/index.html" ><b>RELATORIO FAST</b></a></li>
+                <li><a href="https://github.com/AdrielRosa2001/automacao-mubysis" target="_blank"><b>AUTOMUBY</b></a></li>
+            </ul>
+        </nav>
+    </header>
+    <div style="height: 90vh;">
+        <div style="width: 800px;height: 500px;background-color: #fff;margin-top: 30px;box-shadow: 0px 2px 8px #c9c9c9;display: flex;flex-direction: column;align-content: center;align-items: center;">
+            <h1 class="gradiente titulo_site">Recibo Fast - Emissor de recibos rapidos</h1>
+            <fieldset class="fieldset-campos">
+                <legend style="padding-left: 7px;padding-right: 7px;background: #fff;border-radius: 10px;"><b class="gradiente">Dados do recibo</b></legend>
+                <div style="width: 287px;background: #fff;padding: 19px;padding-right: 94px;border-radius: 12px;">
+                    <p class="p-default p-espassado">
+                        <b>Cliente: </b><input class="input-default" type="text" id="cliente-desc" value="">
+                    </p>
+                    <p class="p-default p-espassado">
+                        <b>Valor: </b><input class="input-default" type="number" id="valor-desc" value="">
+                    </p>
+                    <p class="p-default p-espassado">
+                        <b>Referente: </b><input class="input-default" type="text" id="referente-desc" value="">
+                    </p>
+                    <p class="p-default p-espassado"> 
+                        <b>Data: </b> <span> <input class="input-data" type="number" id="dia-data" value=""> do <input class="input-data" type="number" id="mes-data" value=""> de <input class="input-ano" type="number" id="ano-data" value=""> </span>
+                    </p>
+                </div>
+            </fieldset>
+            <button class="botao_gerar" onclick="gerarPopupRecibo()"><b>Gerar recibo</b></button>
+        </div>
+        <div class="recibo-oculto" id="recibo-oculto" style="display: none;">
+            <div class="recibo-completo" style="width: 452.04px;height: auto; margin: 40px;border: solid black 1px;padding: 5px;display: flex;flex-direction: row;align-items: center;justify-content: center;align-content: center;"> <!-- height: 225.4px; -->
+                <div class="coluna-raiz-1">
+                    <div class="linha01" style="display: flex; flex-direction: row; margin-bottom: 5px;">
+                        <div class="L1-coluna01" style="width: 280.14px;height: 62.64px;display: flex;align-items: center;justify-content: flex-start;">
+                            <img src="./assets/logo-recibo-croqui.png" alt="logo-croqui" style="width: 187.75px; height: 41.93px;">
+                        </div>
+                        <div class="L1-coluna02">
+                            <div style="width: 128.9px;height: 34.56px;display: flex;align-items: flex-end;justify-content: center;font-size: 20px;padding-bottom: 6px;"><b>RECIBO</b></div>
+                            <div style="width: 128.9px; height: 22.08px; border: solid black 3px; border-radius: 10px; display: flex; justify-content: center; align-items: center;"><b id="valor-reais">R$ 100,00</b></div>
+                        </div>
+                    </div>
+                    <div class="linha02" style="display: flex; flex-direction: row; margin-bottom: 5px;">
+                        <div class="L2-coluna01" style="width: 70.8px; height: 19.56px; display: flex; align-items: flex-end; font-size: 11px;"><b>Recebido de</b></div>
+                        <div class="L2-coluna02" style="width: 338.77px;height: 19.56px;display: flex;justify-content: center;border-bottom: solid black 3px;align-content: flex-end;"><b id="recebido-de">CAIXA LOJA SÃO JOSÉ</b></div>
+                    </div>
+                    <div class="linha03" style="display: flex; flex-direction: row; margin-bottom: 5px;">
+                        <div class="L3-coluna01" style="width: 92.99px; height: 19.56px; display: flex; align-items: flex-end; font-size: 11px;"><b>A importância de</b></div>
+                        <div class="L3-coluna02" style="width: 316.78px;height: 19.56px;display: flex;justify-content: center;border-bottom: solid black 3px;align-content: flex-end;"><b id="valor-extenso" style="line-height: 1.7;">CEM REAIS</b></div>
+                    </div>
+                    <div class="linha04" style="display: flex; flex-direction: row; margin-bottom: 5px;">
+                        <div class="L4-coluna01" style="width: 410.03px;height: 19.56px;display: flex;justify-content: center;border-bottom: solid black 3px;align-content: flex-end;"><b id="valor-extenso2"></b></div>
+                    </div>
+                    <div class="linha05" style="display: flex; flex-direction: row; margin-bottom: 5px;">
+                        <div class="L5-coluna01" style="width: 74.46px; height: 19.56px; display: flex; align-items: flex-end; font-size: 11px;"><b>Referente a</b></div>
+                        <div class="L5-coluna02" style="width: 335.58px;height: 19.56px;display: flex;justify-content: center;border-bottom: solid black 3px;align-content: flex-end;"><b id="referente-a" style="line-height: 1.7;">SERVIÇO PRESTADO</b></div>
+                    </div>
+                    <div class="linha06" style="display: flex; flex-direction: row; margin-bottom: 5px;">
+                        <div class="L6-coluna01" style="width: 410.03px;height: 19.56px;display: flex;justify-content: center;border-bottom: solid black 3px;align-content: flex-end;"><b id="referente-a2"></b></div>
+                    </div>
+                    <div class="linha07" style="display: flex; flex-direction: row; margin-bottom: 5px;">
+                        <div class="L7-coluna01" style="width: 29.63px; height: 28.24px; display: flex; align-items: flex-end; font-size: 11px;"><b>Data</b></div>
+                        <div class="L7-coluna02" style="width: 31.65px;height: 28.24px;display: flex;justify-content: center;border-bottom: solid black 3px;align-content: flex-end;align-items: flex-end;"><b id="dia">25</b></div>
+                        <div class="L7-coluna03" style="width: 18.25px;height: 28.24px;display: flex;align-items: flex-end;font-size: 11px;justify-content: center;"><b>de</b></div>
+                        <div class="L7-coluna04" style="width: 87.62px;height: 28.24px;display: flex;justify-content: center;border-bottom: solid black 3px;align-content: flex-end;align-items: flex-end;"><b id="mes">AGOSTO</b></div>
+                        <div class="L7-coluna05" style="width: 18.25px;height: 28.24px;display: flex;align-items: flex-end;font-size: 11px;justify-content: center;"><b>de</b></div>
+                        <div class="L7-coluna06" style="width: 43.18px;height: 28.24px;display: flex;justify-content: center;border-bottom: solid black 3px;align-content: flex-end;align-items: flex-end;"><b id="ano">2022</b></div>
+                        <div class="L7-coluna07" style="width: 53.88px; height: 28.24px; display: flex; align-items: flex-end; font-size: 11px;"></div>
+                        <div class="L7-coluna08" style="width: 129.30px;height: 28.24px;display: flex;justify-content: center;border-bottom: solid black 3px;align-content: flex-end;align-items: flex-end;"></div>
+                    </div>
+                    <div class="linha08" style="display: flex; flex-direction: row; margin-bottom: 5px;">
+                        <div class="L8-coluna01" style="width: 281.5px;height: 23px;display: flex;justify-content: center;align-content: center;align-items: center;">
+                            <img src="./assets/rodape-recibo.png" alt="rodape-recibo" style="width: 276.7px; height: 7.28px;">
+                        </div>
+                        <div class="L8-coluna02" style="width: 128.46px;height: 23px;display: flex;align-items: flex-start;font-size: 14px;justify-content: center;align-content: flex-start;"><b>Funcionario</b></div>
+                    </div>
+                </div>
+                <div class="coluna-raiz-2" style="margin-left: 10px;">
+                    <img src="./assets/lateral-recibo.png" alt="lateral" style="width: auto; height: 279.44px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <footer style="width: 100%; height: 4vh; display: flex; justify-content: center; align-items: center;">
+        <span>Created By: Adriel Rosa</span>
+    </footer>
+    <script type="text/javascript" src="./scripts.js"></script>
+</body>
+</html>

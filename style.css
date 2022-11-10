@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.ul-nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+.ul-nav-menu li {
+    height: 39px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.ul-nav-menu a {
+    text-decoration: none;
+    border-left: solid #8c8d8d 1px;
+    border-right: solid #8c8d8d 1px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    color: #888888;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: 0.3s;
+
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
+}
+.ul-nav-menu a:hover {
+    box-shadow: inset 0px 2px 8px #a5a5a5;
+}
+#logo-site{
+    width: 95px; 
+    height: auto;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#logo-site:hover{
+    opacity: 80%;
+}
+
+.titulo_site {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.gradiente {
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+    -webkit-text-fill-color: transparent;
+    color: black;
+}
+
+nav, footer {
+    background-color: #fff;
+}
+.fieldset-campos{
+    width: 400px;
+    padding: 5px;
+    border: transparent;
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    border-radius: 20px;
+    position: relative;
+}
+.input-data {
+    width: 30px;
+}
+.input-ano {
+    width: 45px;
+}
+.p-default{
+    margin: 10px;
+}
+.p-espassado{
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.botao_gerar{
+    margin-top: 40px;
+    width: 115px;
+    padding: 7px;
+    border-radius: 20px;
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    border: #ffffff;
+    color: #fff;
+    transition: 0.2s;
+    border: solid #fff 2px;
+    cursor: pointer;
+}
+.botao_gerar:hover{
+    background-color: #fff;
+    background-image: linear-gradient(to bottom, rebeccapurple, steelblue, turquoise);
+    background-clip: text;
+    -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+    -webkit-text-fill-color: transparent;
+    border: solid steelblue 2px;
+}
