@@ -2,7 +2,7 @@
 
 ![preview](./.github/preview.gif)
 
-> Adriel Rosa (update: 17/11/2022 - 10:38 AM)
+> Adriel Rosa (update: 17/11/2022 - 10:38 AM) 
 
 Pagina destinada a emissão de recibos rapidos.
 
